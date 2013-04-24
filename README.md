@@ -1,0 +1,4 @@
+fran
+====
+
+Friendly Resizer ANdroid
