@@ -1,15 +1,16 @@
 (ns fred.image-grabber
-	(:require [fs.core :as fs]))
+  (:require [fs.core :as fs]
+            [clojure.string :as s]))
+
+(def img-exts #{".jpg" ".png" ".gif"})
 
 (defn is-image?
-	"Returns whether the desired file corresponds to an image."
-	[file]
-	(let [ext (last (fs/split-ext file))]
-		(if (= ext nil)
-			false
-			(contains? #{".jpg" ".png" ".gif"} (clojure.string/lower-case ext)))))
+  "Returns whether the desired file corresponds to an image."
+  [file]
+  (let [[_ ext] (fs/split-ext file)]
+    (and ext (img-exts (s/lower-case ext)))))
 
 (defn get-images
-    "Returns a list of image files on a certain folder."
-    [folder]
-    (filter is-image? (fs/list-dir folder)))
+  "Returns a list of image files on a certain folder."
+  [folder]
+  (filter is-image? (fs/list-dir folder)))
