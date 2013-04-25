@@ -1,6 +1,5 @@
 (ns fred.core
-	(:require [fs.core :as fs])
-	(:gen-class ))
+	(:require [fred.image-grabber :as image-grabber]))
 
 (defn -main [& args]
-	(fs/list-dir "."))
+	(print (image-grabber/get-images (first args))))
