@@ -7,7 +7,7 @@
 (defn is-image?
   "Returns whether the desired file corresponds to an image."
   [file]
-  (let [[_ ext] (fs/split-ext file)]
+  (let [ext (fs/extension file)]
     (and ext (img-exts (s/lower-case ext)))))
 
 (defn get-images
