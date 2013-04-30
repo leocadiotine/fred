@@ -1,6 +1,7 @@
 (ns fred.core
   (:require [fred.image-grabber :as image-grabber]
-            [fred.image-saver :as image-saver]))
+            [fred.image-saver :as image-saver]
+            [fred.image-resizer :as image-resizer]))
 
 
 (defn -main [path use-ldpi?]
@@ -10,5 +11,10 @@
   (image-saver/clone-dir
     path "drawable-xhdpi" "drawable-hdpi" "drawable-mdpi")
 
-  (if use-ldpi? 
-    (image-saver/clone-dir path "drawable-xhdpi" "drawable-ldpi")))
+  (image-resizer/resize-dir path "drawable-hdpi" 0.75)
+  (image-resizer/resize-dir path "drawable-mdpi" 0.5)
+
+  (if (= use-ldpi? true)
+    (do
+      (image-saver/clone-dir path "drawable-xhdpi" "drawable-ldpi")
+      (image-resizer/resize-dir path "drawable-ldpi" 0.25))))
