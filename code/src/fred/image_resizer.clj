@@ -1,9 +1,9 @@
 (ns fred.image-resizer
-  (import java.io.File)
-  (import javax.imageio.ImageIO)
-  (import org.imgscalr.Scalr)
-  (import org.imgscalr.Scalr$Method)
-  (import java.awt.image.BufferedImageOp))
+  (:import java.io.File
+           javax.imageio.ImageIO
+           org.imgscalr.Scalr
+           org.imgscalr.Scalr$Method
+           java.awt.image.BufferedImageOp))
 
 
 (defn list-all-files
