@@ -25,14 +25,14 @@
       path-folders "drawable-xhdpi" "drawable-hdpi" "drawable-mdpi")
 
     (image-resizer/resize-dir path-folders "drawable-hdpi" 0.75)
-    (image-resizer/resize-dir path-folders "drawable-mdpi" 0.5)))
+    (image-resizer/resize-dir path-folders "drawable-mdpi" 0.5))
 
   ;; TODO
   ; (when (= use-ldpi? true)
   ;   (image-saver/clone-dir path-folders "drawable-xhdpi" "drawable-ldpi")
-  ;   (image-resizer/resize-dir path-folders "drawable-ldpi" 0.25)))
+  ;   (image-resizer/resize-dir path-folders "drawable-ldpi" 0.25))
 
-  ;; TODO Show a dialog
+  (alert "Your images were resized, buddy. Hope I've been useful.\nDo you want to grab a beer someday?"))
 
 (defn handle-file-drop
   "Grabs the dropped folder and start the resizing process."
@@ -57,7 +57,7 @@
                                           :editable? false
                                           :margin 20
                                           :font "BOLD-14"
-                                          :text "Hello, master. I can resize images for you, if that is your wish.\nJust drag a folder and drop inside me and I'll gladly do the work!")])
+                                          :text "Hely, pal, how is it going? I can resize images for you, it's no trouble\nat all! Just drag a folder and drop inside me and I'll gladly do the work.")])
                 :on-close :exit)
       pack!
       show!)))
