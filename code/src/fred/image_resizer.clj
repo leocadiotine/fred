@@ -11,10 +11,18 @@
   [root-dir relative-dir]
   (.listFiles (File. (str root-dir relative-dir))))
 
+(defn get-file-extension
+  "Returns the file extension."
+  [file]
+  (let [file-name (.getName file)]
+    (.substring
+      file-name
+      (+ (.lastIndexOf file-name ".") 1))))
+
 (defn override-image
   "Overrides the given file with the given BufferedImage."
   [image-file buffered-image]
-  )
+  (ImageIO/write buffered-image (get-file-extension image-file) image-file))
 
 (defn resize-image
   "Resizes the given image applying the given scale.
