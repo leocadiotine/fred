@@ -1,9 +1,9 @@
 (ns fred.image-resizer
-  (import java.io.File)
-  (import javax.imageio.ImageIO)
-  (import org.imgscalr.Scalr)
-  (import org.imgscalr.Scalr$Method)
-  (import java.awt.image.BufferedImageOp))
+  (:import java.io.File
+           javax.imageio.ImageIO
+           org.imgscalr.Scalr
+           org.imgscalr.Scalr$Method
+           java.awt.image.BufferedImageOp))
 
 
 (defn list-all-files
@@ -15,9 +15,8 @@
   "Returns the file extension."
   [file]
   (let [file-name (.getName file)]
-    (.substring
-      file-name
-      (+ (.lastIndexOf file-name ".") 1))))
+    (subs file-name
+          (inc (.lastIndexOf file-name ".")))))
 
 (defn override-image
   "Overrides the given file with the given BufferedImage."
@@ -26,21 +25,20 @@
 
 (defn resize-image
   "Resizes the given image applying the given scale.
-  This method deletes 9-patches. TODO: properly resize them."
+  TODO: properly resize them."
   [image-file scale]
-  (if-not (.endsWith (.getName image-file) ".9.png")
-    (let [buffered-image (ImageIO/read image-file)]
-      (override-image image-file
-                      (Scalr/resize buffered-image
-                                    Scalr$Method/AUTOMATIC
-                                    (int (* (.getWidth buffered-image) scale))
-                                    (int (* (.getHeight buffered-image) scale))
-                                    (into-array BufferedImageOp [Scalr/OP_ANTIALIAS]))))
-    ;; Delete the 9-patches
-    (.delete image-file)))
+  (let [buffered-image (ImageIO/read image-file)]
+    (override-image image-file
+                    (Scalr/resize buffered-image
+                                  Scalr$Method/AUTOMATIC
+                                  (int (* (.getWidth buffered-image) scale))
+                                  (int (* (.getHeight buffered-image) scale))
+                                  (into-array BufferedImageOp [Scalr/OP_ANTIALIAS])))))
 
 (defn resize-dir
   "Resizes all images on a directory based on a scale."
   [root-dir relative-dir scale]
   (doseq [file (list-all-files root-dir relative-dir)]
-    (resize-image file scale)))
+    (if (.endsWith (.getName file) ".9.png")
+      (.delete image-file)
+      (resize-image file scale))))
