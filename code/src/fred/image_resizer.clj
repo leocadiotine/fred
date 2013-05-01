@@ -15,9 +15,8 @@
   "Returns the file extension."
   [file]
   (let [file-name (.getName file)]
-    (.substring
-      file-name
-      (+ (.lastIndexOf file-name ".") 1))))
+    (subs file-name
+          (inc (.lastIndexOf file-name ".")))))
 
 (defn override-image
   "Overrides the given file with the given BufferedImage."
