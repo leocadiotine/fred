@@ -14,14 +14,14 @@
                                                     "-" "_"
                                                     "@2x" ""}))
 
-(defn copy-to-subdir-and-rename
-  "Moves a list of files from the given path to the given subdirectory.
+(defn copy-to-dir-and-rename
+  "Moves a list of files from the given folder to the given target directory.
   Also, renames all the files to match Android's resource naming requirements:
   all lowercase, replaces '-' and whitespaces with '_' and removes @2x."
-  [file-names original-path subfolder-name]
+  [file-names files-path target-directory-name]
   (doseq [filename file-names]
-    (fs/copy+ (str original-path filename)
-              (str original-path subfolder-name "/"
+    (fs/copy+ (str files-path filename)
+              (str target-directory-name
                    (rename-droid filename)))))
 
 (defn clone-dir
