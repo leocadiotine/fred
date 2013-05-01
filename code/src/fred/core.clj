@@ -14,7 +14,6 @@
   (image-resizer/resize-dir path "drawable-hdpi" 0.75)
   (image-resizer/resize-dir path "drawable-mdpi" 0.5)
 
-  (if (= use-ldpi? true)
-    (do
-      (image-saver/clone-dir path "drawable-xhdpi" "drawable-ldpi")
-      (image-resizer/resize-dir path "drawable-ldpi" 0.25))))
+  (when (= use-ldpi? true)
+    (image-saver/clone-dir path "drawable-xhdpi" "drawable-ldpi")
+    (image-resizer/resize-dir path "drawable-ldpi" 0.25)))
