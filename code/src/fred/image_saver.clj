@@ -21,8 +21,8 @@
   [file-names original-path subfolder-name]
   (doseq [filename file-names]
     (fs/copy+ (str original-path filename)
-      (str original-path subfolder-name "/"
-        (rename-droid filename)))))
+              (str original-path subfolder-name "/"
+                   (rename-droid filename)))))
 
 (defn clone-dir
   "Makes several copies of original-path. root is the root folder and all the other
