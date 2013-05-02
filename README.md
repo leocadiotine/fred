@@ -37,3 +37,14 @@ Pull requests are always welcome. So are donations :)
 To find me, buzz at `me[at]leocad.io` or [follow me on Twitter](http://www.twitter.com/leocadiotine). To read interesting stuff, go to [my blog](http://blog.leocad.io).
 
 Special thanks to [swannodette](https://github.com/swannodette) and [zachallaun](https://github.com/zachallaun) for the pull requests!
+
+~~~~
+:::::::::::::
+::         ::
+:: Made at ::
+::         ::
+:::::::::::::
+     ::
+Hacker School
+:::::::::::::
+~~~~
