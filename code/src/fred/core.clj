@@ -47,7 +47,7 @@
   (invoke-later
     (-> (frame  :title    "Fred"
                 :content  (flow-panel
-                            :size [512 :by 730]
+                            :size [512 :by 630]
                             :items  [(label :icon (clojure.java.io/resource "icon.png")
                                       :drag-enabled? true
                                       :transfer-handler 
