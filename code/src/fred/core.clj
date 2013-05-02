@@ -3,7 +3,8 @@
             [fred.image-saver :as image-saver]
             [fred.image-resizer :as image-resizer]
             [seesaw.dnd :as dnd])
-  (:use seesaw.core))
+  (:use seesaw.core)
+  (:gen-class))
 
 (defn get-parent-path
   "Returns the folder immediately above of the given one."
