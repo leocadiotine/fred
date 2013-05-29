@@ -12,7 +12,7 @@ A tool to resize images to the various screen densities of Android devices.
 ##Purpose
 When developing/designing for Android, you have to deal with a bunch of different screen sizes and resolutions. If you design your layouts following the design guidelines and develop them using properly the SDK, you'll have no trouble. Android do all the hard work for you.
 
-But if you don't supply different versions of your image resources for the different screen sizes, Android will do that at runtime. And, this way, your app will be slow. Thus, is always a good idea to supply images on the *drawable-xhdpi*, *drawable-hdpi*, *drawable-mdpi* and (maybe) *drawable-ldpi* folders.
+But if you don't supply different versions of your image resources for the different screen sizes, Android will do that at runtime. And, this way, your app will be slow. Thus, it's always a good idea to supply images on the *drawable-xhdpi*, *drawable-hdpi*, *drawable-mdpi* and (maybe) *drawable-ldpi* folders.
 
 But do this in an image editor (like Photoshop) takes time. And it's extremely boring. So why lose time doing that? Fred can do this job for you! And trust me, he would be very happy to help.
 
