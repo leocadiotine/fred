@@ -26,6 +26,9 @@ Download [the executable jar](https://dl.dropboxusercontent.com/u/5135185/blog/f
 
 You need to have [Java](https://www.java.com/en/download/index.jsp) installed to run Fred.
 
+##Build instructions
+For build instructions, refer to the [wiki](https://github.com/leocadiotine/fred/wiki/Build-instructions) page.
+
 ##License
 Fred's source code is released under BSD 2-clause license. Check LICENSE file for more information.
 
