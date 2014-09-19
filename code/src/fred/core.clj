@@ -19,17 +19,18 @@
   [path-images use-ldpi?]
   (let [path-folders (get-parent-path path-images)]
     (image-saver/copy-to-dir-and-rename
-      (image-grabber/get-images path-images) path-images (str path-folders "drawable-xhdpi/"))
+      (image-grabber/get-images path-images) path-images (str path-folders "drawable-xxhdpi/"))
 
     (image-saver/clone-dir
-      path-folders "drawable-xhdpi" "drawable-hdpi" "drawable-mdpi")
+      path-folders "drawable-xxhdpi" "drawable-xhdpi" "drawable-hdpi" "drawable-mdpi")
 
-    (image-resizer/resize-dir path-folders "drawable-hdpi" 0.75)
-    (image-resizer/resize-dir path-folders "drawable-mdpi" 0.5)
+    (image-resizer/resize-dir path-folders "drawable-xhdpi" 8/12)
+    (image-resizer/resize-dir path-folders "drawable-hdpi" 6/12)
+    (image-resizer/resize-dir path-folders "drawable-mdpi" 4/12)
 
   (when (= use-ldpi? true)
-    (image-saver/clone-dir path-folders "drawable-xhdpi" "drawable-ldpi")
-    (image-resizer/resize-dir path-folders "drawable-ldpi" 0.25)))
+    (image-saver/clone-dir path-folders "drawable-xxhdpi" "drawable-ldpi")
+    (image-resizer/resize-dir path-folders "drawable-ldpi" 3/12)))
 
   (alert "Your images were resized, buddy. Hope I've been useful.\nDo you want to grab a beer someday?"))
 
