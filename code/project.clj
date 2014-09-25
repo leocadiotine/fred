@@ -1,4 +1,4 @@
-(defproject fred "1.0.0-SNAPSHOT"
+(defproject fred "1.1.0-SNAPSHOT"
   :description "A tool to resize images to the various screen densities of Android devices."
   :dependencies[
   	[org.clojure/clojure "1.2.1"]
