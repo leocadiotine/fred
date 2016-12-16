@@ -2,12 +2,12 @@
 
 **F**riendly **Re**sizer **D**roid
 
-![Fred logo](https://dl.dropboxusercontent.com/u/5135185/blog/fred.png)
+![Fred logo](http://static.leocad.io/fred.png)
 
 A tool to resize images to the various screen densities of Android devices.
 
 ##Current version
-1.0 (20130502). Download the binary here: [fred-1.0.jar](https://dl.dropboxusercontent.com/u/5135185/blog/fred-1.0.jar).
+1.0 (20130502). Download the binary here: [fred-1.1.jar](ttps://github.com/leocadiotine/fred/releases/download/1.1/fred-1.1.jar).
 
 ##Purpose
 When developing/designing for Android, you have to deal with a bunch of different screen sizes and resolutions. If you design your layouts following the design guidelines and develop them using properly the SDK, you'll have no trouble. Android does all the hard work for you.
